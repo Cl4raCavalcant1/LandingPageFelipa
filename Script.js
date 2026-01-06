@@ -3,19 +3,16 @@
    ========================================= */
 const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
 const navMenu = document.querySelector('.nav');
+const icon = mobileMenuIcon ? mobileMenuIcon.querySelector('i') : null;
 
-if(mobileMenuIcon) {
+if (mobileMenuIcon && navMenu) {
     mobileMenuIcon.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         
-        // Troca o ícone de barras para X (opcional, visual)
-        const icon = mobileMenuIcon.querySelector('i');
-        if (navMenu.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+        // Troca o ícone de barras para X
+        if (icon) {
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
         }
     });
 }
@@ -24,14 +21,15 @@ if(mobileMenuIcon) {
 document.querySelectorAll('.nav a').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
-        const icon = mobileMenuIcon.querySelector('i');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+        if (icon) {
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+        }
     });
 });
 
 /* =========================================
-   2. HEADER MUDAR AO ROLAR (GLASSMORPHISM)
+   2. HEADER MUDAR AO ROLAR
    ========================================= */
 const header = document.querySelector('.header');
 
@@ -41,30 +39,4 @@ window.addEventListener('scroll', () => {
     } else {
         header.classList.remove('scrolled');
     }
-});
-// 1. MENU MOBILE (Abrir e Fechar)
-const mobileBtn = document.querySelector('.mobile-menu-icon');
-const nav = document.querySelector('.nav');
-
-if (mobileBtn) {
-  mobileBtn.addEventListener('click', () => {
-    nav.classList.toggle('active'); // Mostra ou esconde o menu
-  });
-}
-
-// Fechar o menu automaticamente ao clicar em um link (melhor experiência no celular)
-document.querySelectorAll('.nav a').forEach(link => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('active');
-  });
-});
-
-// 2. EFEITO NO HEADER AO ROLAR (Fica branco com sombra)
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('.header');
-  if (window.scrollY > 50) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
 });

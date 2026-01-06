@@ -1,10 +1,9 @@
 /* =========================================
-   RESET E VARIÁVEIS (CORES DO DESIGN)
+   RESET E VARIÁVEIS
    ========================================= */
 :root {
-  /* Cores exatas da imagem */
-  --deep-blue: #1e255e;   /* Azul Profundo (Hero, Footer, About) */
-  --gold: #d4b86a;        /* Dourado (Botões, Títulos, Cards) */
+  --deep-blue: #1e255e;
+  --gold: #d4b86a;
   --white: #ffffff;
   --text-dark: #333333;
   --text-light: #f4f4f4;
@@ -21,10 +20,10 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif; /* Texto corrido */
+  font-family: 'Poppins', sans-serif;
   color: var(--text-dark);
   background-color: var(--white);
-  overflow-x: hidden; /* Evita rolagem lateral */
+  overflow-x: hidden;
 }
 
 /* =========================================
@@ -36,18 +35,17 @@ body {
   align-items: center;
   padding: 15px 8%;
   background: var(--white);
-  position: sticky; /* Menu fixo ao rolar */
+  position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 2000; /* Aumentado para garantir que fique acima de tudo */
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
 }
 
-/* Classe adicionada via JS ao rolar */
 .header.scrolled {
-  background: rgba(255, 255, 255, 0.95); /* Fundo branco translúcido */
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Sombra mais forte */
-  padding: 10px 8%; /* Altura reduzida */
+  background: rgba(255, 255, 255, 0.98);
+  padding: 10px 8%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .logo-container {
@@ -56,8 +54,8 @@ body {
 }
 
 .logo-script {
-  font-family: 'Playfair Display', serif; /* Fonte elegante do Logo */
-  font-size: 28px;
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
   color: var(--gold);
   font-style: italic;
   font-weight: 600;
@@ -65,7 +63,7 @@ body {
 }
 
 .logo-sub {
-  font-size: 10px;
+  font-size: 9px;
   letter-spacing: 3px;
   color: #999;
   text-transform: uppercase;
@@ -106,15 +104,14 @@ body {
 }
 
 /* =========================================
-   HERO SECTION (AZUL COM FOTO)
+   HERO SECTION
    ========================================= */
 .hero {
   background: linear-gradient(135deg, #2a3575 0%, var(--deep-blue) 100%);
-  padding: 40px 8% 0 8%;
+  padding: 60px 8% 0 8%;
   min-height: 85vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   position: relative;
   color: var(--white);
 }
@@ -124,28 +121,26 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  flex-wrap: wrap;
 }
 
 .hero-text {
   flex: 1;
-  max-width: 500px;
-  margin-bottom: 40px;
+  max-width: 550px;
+  z-index: 2;
 }
 
 .hero-text h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 42px;
-  line-height: 1.2;
+  font-size: 48px;
+  line-height: 1.1;
   margin-bottom: 20px;
-  font-weight: 400;
 }
 
 .hero-text p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   opacity: 0.9;
-  max-width: 380px;
+  max-width: 400px;
 }
 
 .hero-image-container {
@@ -155,26 +150,21 @@ body {
   position: relative;
 }
 
-/* Brilho atrás da dentista */
 .glow-effect {
   position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0) 70%);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(212, 184, 106, 0.2) 0%, transparent 70%);
   z-index: 0;
 }
 
 .hero-img {
   width: 100%;
-  max-width: 450px;
+  max-width: 480px;
   position: relative;
   z-index: 1;
 }
 
-/* Seta para baixo */
 .scroll-down {
   position: absolute;
   bottom: -25px;
@@ -190,16 +180,14 @@ body {
   justify-content: center;
   color: var(--white);
   z-index: 10;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* =========================================
-   ESPECIALIDADES (ATUALIZADO PARA 3 COLUNAS)
+   ESPECIALIDADES
    ========================================= */
 .specialties {
-  padding: 100px 8% 60px;
+  padding: 120px 8% 80px;
   text-align: center;
-  background: var(--white);
 }
 
 .pill-title {
@@ -211,88 +199,53 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 22px;
   margin-bottom: 60px;
-  box-shadow: 0 4px 15px rgba(212, 184, 106, 0.4);
 }
 
 .cards-grid {
   display: grid;
-  /* MUDANÇA AQUI: Força 3 colunas exatas */
   grid-template-columns: repeat(3, 1fr); 
   gap: 30px;
-  margin-bottom: 50px;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 50px;
 }
 
 .card-minimal {
-  padding: 30px 20px;
-  text-align: center;
-  transition: transform 0.3s;
-  border: 1px solid transparent;
-  border-radius: 10px;
+  padding: 40px 20px;
+  border-radius: 15px;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
 }
 
 .card-minimal:hover {
   transform: translateY(-10px);
-  border-color: #f0f0f0;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border-color: var(--gold);
 }
 
 .card-minimal i {
   font-size: 40px;
   color: var(--gold);
   margin-bottom: 20px;
-  display: block;
 }
 
 .card-minimal h3 {
-  font-size: 16px;
-  color: var(--gold);
+  color: var(--deep-blue);
   margin-bottom: 10px;
-  font-weight: 500;
-}
-
-.card-minimal p {
-  font-size: 12px;
-  color: #888;
-  line-height: 1.5;
-}
-
-.center-btn {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.btn-gold {
-  background: var(--gold);
-  color: var(--white);
-  padding: 14px 45px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-block;
-  transition: opacity 0.3s;
-}
-
-.btn-gold:hover {
-  opacity: 0.9;
 }
 
 /* =========================================
-   MARQUEE (FAIXA RODANDO)
+   MARQUEE
    ========================================= */
 .marquee-strip {
   background: var(--deep-blue);
-  padding: 18px 0;
+  padding: 20px 0;
   overflow: hidden;
   white-space: nowrap;
-  border-top: 4px solid #fff;
 }
 
 .marquee-content {
   display: inline-block;
-  animation: scroll 25s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
 .marquee-content span {
@@ -301,83 +254,58 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-right: 60px;
-  position: relative;
-}
-
-.marquee-content span::after {
-  content: '•';
-  position: absolute;
-  right: -35px;
-  color: var(--gold);
 }
 
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 /* =========================================
-   SOBRE (FUNDO AZUL)
+   SOBRE
    ========================================= */
 .about-section {
   background: var(--deep-blue);
   color: var(--white);
-  padding: 80px 8%;
+  padding: 100px 8%;
 }
 
 .about-container {
   display: flex;
   align-items: center;
-  gap: 80px;
-  flex-wrap: wrap;
+  gap: 60px;
 }
 
-.about-text {
-  flex: 1;
-  min-width: 300px;
-}
+.about-text { flex: 1; }
 
 .about-text h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 40px;
-  line-height: 1.2;
+  font-size: 42px;
   margin-bottom: 25px;
 }
 
-.gold-text {
-  color: var(--gold);
-}
-
-.about-text p {
-  margin-bottom: 20px;
-  line-height: 1.8;
-  opacity: 0.9;
-  font-size: 15px;
-}
+.gold-text { color: var(--gold); }
 
 .about-image-wrapper {
   flex: 1;
   position: relative;
   display: flex;
   justify-content: center;
-  min-width: 300px;
 }
 
 .gold-backdrop {
   position: absolute;
-  width: 100%;
-  max-width: 380px;
+  width: 90%;
   height: 90%;
   background: #a3893c;
   border-radius: 30px;
   bottom: 0;
-  right: 10px;
   z-index: 0;
 }
 
 .about-image-wrapper img {
   width: 100%;
-  max-width: 380px;
+  max-width: 400px;
   position: relative;
   z-index: 1;
   border-radius: 0 0 30px 30px;
@@ -385,133 +313,77 @@ body {
 }
 
 /* =========================================
-   DEPOIMENTOS (CARDS DOURADOS)
+   DEPOIMENTOS E FOOTER
    ========================================= */
-.testimonials-section {
-  padding: 80px 8%;
-  background: var(--white);
-  text-align: center;
-}
+.testimonials-section { padding: 100px 8%; text-align: center; }
 
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
 
 .testi-card {
   background: var(--gold);
   color: var(--white);
-  padding: 40px 30px;
+  padding: 40px;
   border-radius: 20px;
   text-align: left;
-  box-shadow: 0 10px 20px rgba(212, 184, 106, 0.3);
 }
 
-.testi-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.testi-header img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 3px solid var(--white);
-  object-fit: cover;
-}
-
-.testi-header h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-}
-
-.testi-card p {
-  font-style: italic;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-/* =========================================
-   FOOTER CTA (AZUL)
-   ========================================= */
 .footer-cta {
   background: var(--deep-blue);
   color: var(--white);
   text-align: center;
   padding: 100px 8%;
-  border-top: 10px solid var(--white);
-}
-
-.footer-cta h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  line-height: 1.4;
-  margin-bottom: 40px;
-}
-
-.margin-top {
-  margin-top: 0;
 }
 
 /* =========================================
-   RESPONSIVO E MOBILE (ORGANIZADO)
+   RESPONSIVO (CORREÇÕES MOBILE)
    ========================================= */
-@media (max-width: 900px) {
-  /* Layout Hero e Sobre */
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding-top: 100px;
-  }
-  
-  .hero-text { margin-right: 0; }
-  
-  .hero-image-container {
-    width: 100%;
-    margin-top: 40px;
-  }
-  
-  .glow-effect { width: 300px; height: 300px; }
+@media (max-width: 992px) {
+  .hero-text h2 { font-size: 36px; }
+  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
 
-  .about-container { flex-direction: column; }
-  .gold-backdrop { right: 0; margin: 0 auto; left: 0; width: 90%; }
-
+@media (max-width: 768px) {
   /* Menu Mobile */
+  .mobile-menu-icon { display: block; }
+
   .nav {
-    display: none; /* Esconde menu padrão */
-    flex-direction: column;
     position: absolute;
-    top: 70px;
+    top: 100%; /* Inicia exatamente abaixo do header */
     left: 0;
     width: 100%;
     background: var(--white);
-    padding: 30px 0;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    text-align: center;
-    gap: 25px;
+    flex-direction: column;
+    padding: 40px 0;
+    gap: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    display: none; /* Escondido por padrão */
+    z-index: 1000;
   }
-  
-  .nav.active { 
-    display: flex; 
-    animation: fadeIn 0.3s ease;
-  }
-  
-  .mobile-menu-icon { display: block; }
 
-  /* Ajuste Grid Especialidades para Tablet */
-  .cards-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-  }
-}
+  .nav.active { display: flex; animation: fadeIn 0.3s ease; }
 
-/* Ajuste Grid Especialidades para Celular */
-@media (max-width: 600px) {
-  .cards-grid {
-    grid-template-columns: 1fr; /* 1 coluna */
+  /* Layout Seções */
+  .hero { padding-top: 40px; text-align: center; }
+  .hero-content { flex-direction: column; }
+  .hero-text { margin-bottom: 40px; }
+  .hero-text p { margin: 0 auto; }
+
+  .about-container { flex-direction: column; text-align: center; }
+  
+  /* Ajuste Imagem Sobre no Mobile */
+  .about-image-wrapper img {
+    transform: translateY(0); /* Remove o pulo no mobile */
+    margin-top: 30px;
   }
+
+  .cards-grid { grid-template-columns: 1fr; }
+  
+  .pill-title { font-size: 18px; padding: 10px 25px; }
+  .footer-cta h2 { font-size: 24px; }
 }
 
 @keyframes fadeIn {
