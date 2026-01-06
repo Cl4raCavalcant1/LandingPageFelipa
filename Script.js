@@ -6,15 +6,22 @@ const icon = mobileBtn?.querySelector('i');
 if (mobileBtn && navMenu) {
     mobileBtn.addEventListener('click', () => {
         navMenu.classList.toggle('active');
-        icon?.classList.toggle('fa-bars');
-        icon?.classList.toggle('fa-times');
+        // Troca Bars por X
+        if (navMenu.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
     });
 
+    // Fecha ao clicar em link
     document.querySelectorAll('.nav a').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
-            icon?.classList.add('fa-bars');
-            icon?.classList.remove('fa-times');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
         });
     });
 }
@@ -27,8 +34,12 @@ document.querySelectorAll('.faq-question').forEach(button => {
     });
 });
 
-// 3. ANIMAÇÕES
-const sr = ScrollReveal({ distance: '40px', duration: 1000, delay: 200, reset: false });
+// 3. ANIMAÇÕES (ScrollReveal)
+const sr = ScrollReveal({ distance: '50px', duration: 1000, delay: 200, reset: false });
 sr.reveal('.hero-text', { origin: 'left' });
+sr.reveal('.hero-image-container', { origin: 'bottom', delay: 400 });
 sr.reveal('.card-minimal', { interval: 150 });
+sr.reveal('.about-text', { origin: 'left' });
+sr.reveal('.about-image-wrapper', { origin: 'right' });
 sr.reveal('.faq-item', { interval: 100 });
+sr.reveal('.testi-card', { interval: 200 });
