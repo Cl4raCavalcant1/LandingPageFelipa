@@ -485,3 +485,43 @@ body {
   .about-container { flex-direction: column; }
   .gold-backdrop { right: 0; margin: 0 auto; left: 0; width: 90%; }
 }
+/* Efeito do Header ao Rolar */
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95); /* Branco translúcido */
+  padding: 10px 8%; /* Fica mais compacto */
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Sombra suave */
+}
+/* CLASSE QUE O JS VAI ADICIONAR AO ROLAR */
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95); /* Fundo branco quase sólido */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Sombra elegante */
+  padding: 10px 8%; /* Fica mais fininho */
+}
+
+/* AJUSTES FINAIS DO MENU MOBILE */
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* Altura do header */
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    padding: 30px 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    gap: 25px;
+  }
+
+  /* Quando o JS adicionar a classe .active, o menu aparece */
+  .nav.active {
+    display: flex; 
+    animation: fadeIn 0.3s ease;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

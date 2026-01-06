@@ -151,5 +151,50 @@
 </section>
 
 <script src="script.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<script>
+  const sr = ScrollReveal({
+    origin: 'top',
+    distance: '50px',
+    duration: 1000,
+    reset: false
+  });
+
+  sr.reveal('.hero-text', { delay: 200 });
+  sr.reveal('.hero-image-container', { delay: 400, origin: 'bottom' });
+  sr.reveal('.pill-title', { delay: 100 });
+  sr.reveal('.card-minimal', { interval: 100 }); /* Um por um */
+  sr.reveal('.about-image-wrapper', { origin: 'left' });
+  sr.reveal('.about-text', { origin: 'right' });
+  sr.reveal('.testi-card', { interval: 200 });
+</script>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<script>
+  // Configuração padrão
+  const sr = ScrollReveal({
+    origin: 'bottom',   // Elementos vêm de baixo
+    distance: '40px',   // Distância que eles percorrem
+    duration: 1000,     // Duração (1 segundo)
+    delay: 200,         // Espera um pouco antes de começar
+    reset: false        // Se 'true', anima toda vez que rolar (deixe false para animar só 1x)
+  });
+
+  // Onde aplicar a animação:
+  sr.reveal('.hero-text', { origin: 'left' });       // Texto do topo vem da esquerda
+  sr.reveal('.hero-image-container', { delay: 400 }); // Imagem demora um pouco mais
+  
+  sr.reveal('.pill-title', { origin: 'top' });       // Títulos descem
+  sr.reveal('.card-minimal', { interval: 150 });     // Cards aparecem um por um
+  
+  sr.reveal('.about-text', { origin: 'left' });
+  sr.reveal('.about-image-wrapper', { origin: 'right' });
+  
+  sr.reveal('.testi-card', { interval: 200 });       // Depoimentos um por um
+  sr.reveal('.footer-cta');
+</script>
+
+<script src="script.js"></script>
 </body>
 </html>
