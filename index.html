@@ -19,14 +19,14 @@
     <span class="logo-sub">ODONTOLOGIA</span>
   </div>
   
-  <nav class="nav">
+  <nav class="nav" id="nav-menu">
     <a href="#">Home</a>
     <a href="#about">Sobre Nós</a>
     <a href="#testimonials">Depoimentos</a>
     <a href="https://wa.me/5500000000000" class="btn-header">Agendar Consulta</a>
   </nav>
 
-  <div class="mobile-menu-icon" onclick="toggleMenu()">
+  <div class="mobile-menu-icon" id="mobile-btn">
     <i class="fas fa-bars"></i>
   </div>
 </header>
@@ -34,13 +34,13 @@
 <section class="hero">
   <div class="hero-content">
     <div class="hero-text">
-      <h2>Mais do que cuidar de dentes,<br>cuidamos de pessoas.</h2>
+      <h2>Mais do que cuidar de dentes,<br><span class="gold-text">cuidamos de pessoas.</span></h2>
       <p>Odontologia estética e funcional com mais de 5 anos de experiência. Atendimento acolhedor, tecnologias atuais e foco total na sua autoestima.</p>
     </div>
     
     <div class="hero-image-container">
       <div class="glow-effect"></div>
-      <img src="DRA.png"Dra Felipa" class="hero-img" />
+      <img src="DRA.png" alt="Dra Felipa" class="hero-img" />
     </div>
   </div>
   
@@ -86,14 +86,14 @@
   </div>
 
   <div class="center-btn">
-    <a href="#" class="btn-gold">Agendar Consulta</a>
+    <a href="https://wa.me/5500000000000" class="btn-gold">Agendar Consulta</a>
   </div>
 </section>
 
 <div class="marquee-strip">
   <div class="marquee-content">
-    <span>Harmonização Facial • Odontopediatria • Implante Dentário • Odontologia • Harmonização Facial • Odontopediatria • Implante Dentário • Odontologia •</span>
-    <span>Harmonização Facial • Odontopediatria • Implante Dentário • Odontologia • Harmonização Facial • Odontopediatria • Implante Dentário • Odontologia •</span>
+    <span>Harmonização Facial • Odontopediatria • Implante Dentário • Odontologia • </span>
+    <span>Harmonização Facial • Odontopediatria • Implante Dentário • Odontologia • </span>
   </div>
 </div>
 
@@ -147,54 +147,31 @@
   <span class="gold-text">Agende sua consulta</span> e dê o primeiro passo<br>
   para sorrir com confiança.</h2>
   
-  <a href="#" class="btn-gold margin-top">Agendar Consulta</a>
+  <a href="https://wa.me/5500000000000" class="btn-gold margin-top">Agendar Consulta</a>
 </section>
 
-<script src="script.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
+<script src="script.js"></script>
 
 <script>
+  // Configuração das animações ao rolar a página
   const sr = ScrollReveal({
-    origin: 'top',
-    distance: '50px',
+    origin: 'bottom',
+    distance: '40px',
     duration: 1000,
+    delay: 200,
     reset: false
   });
 
-  sr.reveal('.hero-text', { delay: 200 });
-  sr.reveal('.hero-image-container', { delay: 400, origin: 'bottom' });
-  sr.reveal('.pill-title', { delay: 100 });
-  sr.reveal('.card-minimal', { interval: 100 }); /* Um por um */
-  sr.reveal('.about-image-wrapper', { origin: 'left' });
-  sr.reveal('.about-text', { origin: 'right' });
-  sr.reveal('.testi-card', { interval: 200 });
-</script>
-<script src="https://unpkg.com/scrollreveal"></script>
-
-<script>
-  // Configuração padrão
-  const sr = ScrollReveal({
-    origin: 'bottom',   // Elementos vêm de baixo
-    distance: '40px',   // Distância que eles percorrem
-    duration: 1000,     // Duração (1 segundo)
-    delay: 200,         // Espera um pouco antes de começar
-    reset: false        // Se 'true', anima toda vez que rolar (deixe false para animar só 1x)
-  });
-
-  // Onde aplicar a animação:
-  sr.reveal('.hero-text', { origin: 'left' });       // Texto do topo vem da esquerda
-  sr.reveal('.hero-image-container', { delay: 400 }); // Imagem demora um pouco mais
-  
-  sr.reveal('.pill-title', { origin: 'top' });       // Títulos descem
-  sr.reveal('.card-minimal', { interval: 150 });     // Cards aparecem um por um
-  
+  sr.reveal('.hero-text', { origin: 'left' });
+  sr.reveal('.hero-image-container', { delay: 400 });
+  sr.reveal('.pill-title', { origin: 'top' });
+  sr.reveal('.card-minimal', { interval: 150 });
   sr.reveal('.about-text', { origin: 'left' });
   sr.reveal('.about-image-wrapper', { origin: 'right' });
-  
-  sr.reveal('.testi-card', { interval: 200 });       // Depoimentos um por um
+  sr.reveal('.testi-card', { interval: 200 });
   sr.reveal('.footer-cta');
 </script>
 
-<script src="script.js"></script>
 </body>
 </html>
