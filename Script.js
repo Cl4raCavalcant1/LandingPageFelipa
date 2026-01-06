@@ -1,40 +1,33 @@
-/* =========================================
-   MENU MOBILE
-   ========================================= */
+// 1. MENU MOBILE
 const mobileBtn = document.getElementById('mobile-btn');
 const navMenu = document.getElementById('nav-menu');
+const icon = mobileBtn?.querySelector('i');
 
 if (mobileBtn && navMenu) {
-    const icon = mobileBtn.querySelector('i');
     mobileBtn.addEventListener('click', () => {
         navMenu.classList.toggle('active');
-        if (navMenu.classList.contains('active')) {
-            icon.classList.replace('fa-bars', 'fa-times');
-        } else {
-            icon.classList.replace('fa-times', 'fa-bars');
-        }
+        icon?.classList.toggle('fa-bars');
+        icon?.classList.toggle('fa-times');
+    });
+
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            icon?.classList.add('fa-bars');
+            icon?.classList.remove('fa-times');
+        });
     });
 }
 
-/* =========================================
-   LÓGICA DO FAQ (ACORDEÃO)
-   ========================================= */
+// 2. FAQ ACORDEÃO
 document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', () => {
-        const faqItem = button.parentElement;
-        
-        // Fecha outros itens abertos (opcional)
-        document.querySelectorAll('.faq-item').forEach(item => {
-            if (item !== faqItem) item.classList.remove('active');
-        });
-
-        faqItem.classList.toggle('active');
+        const item = button.parentElement;
+        item.classList.toggle('active');
     });
 });
 
-/* =========================================
-   ANIMAÇÕES
-   ========================================= */
+// 3. ANIMAÇÕES
 const sr = ScrollReveal({ distance: '40px', duration: 1000, delay: 200, reset: false });
 sr.reveal('.hero-text', { origin: 'left' });
 sr.reveal('.card-minimal', { interval: 150 });
