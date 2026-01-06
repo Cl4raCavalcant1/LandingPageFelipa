@@ -1,274 +1,95 @@
-/* =========================================
-   1. RESET E VARIÁVEIS
-   ========================================= */
 :root {
   --deep-blue: #1e255e;
   --gold: #d4b86a;
   --white: #ffffff;
-  --text-dark: #333333;
-  --text-light: #f4f4f4;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; overflow-x: hidden; color: #333; }
 
-html {
-  scroll-behavior: smooth;
-}
+.gold-text { color: var(--gold) !important; }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  color: var(--text-dark);
-  background-color: var(--white);
-  overflow-x: hidden; /* Evita que a página balance para os lados no celular */
-}
-
-/* Utilitário para o destaque em dourado solicitado */
-.gold-text {
-  color: var(--gold) !important;
-}
-
-/* =========================================
-   2. HEADER (TOPO)
-   ========================================= */
+/* HEADER */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 8%;
-  background: var(--white);
-  position: sticky;
-  top: 0;
-  z-index: 2000; /* Garante que o menu fique acima de tudo */
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 15px 8%; background: var(--white); position: sticky; top: 0; z-index: 2000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
 }
+.logo-script { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 26px; font-style: italic; }
+.logo-sub { font-size: 9px; letter-spacing: 2px; color: #999; text-transform: uppercase; }
 
-.logo-script {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
-  color: var(--gold);
-  font-style: italic;
-  font-weight: 600;
-  line-height: 1;
-}
+.nav { display: flex; align-items: center; gap: 30px; }
+.nav a { text-decoration: none; color: var(--gold); font-size: 14px; font-weight: 500; }
 
-.logo-sub {
-  font-size: 9px;
-  letter-spacing: 3px;
-  color: #999;
-  text-transform: uppercase;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: var(--gold);
-  font-size: 14px;
-  font-weight: 500;
-}
-
-/* FORÇAR COR DOS BOTÕES (Evita o azul automático do mobile) */
 .btn-header, .btn-gold {
   background-color: var(--gold) !important;
   color: var(--white) !important;
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none !important;
-  display: inline-block;
-  border: none;
-  transition: opacity 0.3s;
+  padding: 12px 30px; border-radius: 30px; font-weight: 600; text-decoration: none !important;
+  display: inline-block; border: none;
 }
 
-.mobile-menu-icon {
-  display: none; /* Escondido no desktop */
-  font-size: 24px;
-  color: var(--gold);
-  cursor: pointer;
-}
+.mobile-menu-icon { display: none; font-size: 24px; color: var(--gold); cursor: pointer; }
 
-/* =========================================
-   3. HERO SECTION
-   ========================================= */
+/* HERO */
 .hero {
   background: linear-gradient(135deg, #2a3575 0%, var(--deep-blue) 100%);
-  padding: 60px 8% 40px 8%;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-  color: var(--white);
+  padding: 60px 8% 40px; min-height: 80vh; display: flex; align-items: center; color: var(--white);
 }
+.hero-text h2 { font-family: 'Playfair Display', serif; font-size: 44px; line-height: 1.1; margin-bottom: 20px; }
+.hero-img { width: 100%; max-width: 450px; }
 
-.hero-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.hero-text h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 44px;
-  line-height: 1.1;
-  margin-bottom: 20px;
-}
-
-.hero-img {
-  width: 100%;
-  max-width: 450px;
-  z-index: 1;
-}
-
-/* =========================================
-   4. ESPECIALIDADES
-   ========================================= */
-.specialties {
-  padding: 100px 8% 60px;
-  text-align: center;
-}
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto 50px;
-}
-
+/* SUGESTÃO 4: MICRO-INTERAÇÕES NOS CARDS */
+.cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 40px 8%; }
 .card-minimal {
-  padding: 30px;
-  border-radius: 15px;
-  border: 1px solid #f0f0f0;
-  transition: transform 0.3s;
+  padding: 40px 20px; border-radius: 15px; border: 1px solid #f0f0f0; 
+  text-align: center; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
 .card-minimal:hover {
   transform: translateY(-10px);
   border-color: var(--gold);
+  box-shadow: 0 15px 30px rgba(212, 184, 106, 0.15);
 }
+.card-minimal i { font-size: 40px; color: var(--gold); margin-bottom: 20px; transition: transform 0.3s ease; }
+.card-minimal:hover i { transform: scale(1.2); }
 
-/* =========================================
-   5. SEÇÃO SOBRE (IGUAL À REFERÊNCIA)
-   ========================================= */
-.about-section {
-  background: var(--deep-blue);
-  color: var(--white);
-  padding: 100px 8%;
-}
-
-.about-container {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.about-image-wrapper {
-  position: relative;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end; /* Alinha a foto na base do quadrado */
-}
-
+/* SEÇÃO SOBRE & CREDENCIAIS */
+.about-section { background: var(--deep-blue); color: var(--white); padding: 80px 8%; }
+.about-container { display: flex; align-items: center; gap: 50px; max-width: 1200px; margin: 0 auto; }
+.about-image-wrapper { position: relative; flex: 1; display: flex; justify-content: center; align-items: flex-end; }
 .gold-backdrop {
-  position: absolute;
-  width: 100%;
-  max-width: 380px;
-  height: 340px; /* Altura da moldura arredondada */
-  background: #a3893c;
-  border-radius: 40px; /* Bordas arredondadas da sua referência */
-  bottom: 0;
-  z-index: 1;
+  position: absolute; width: 100%; max-width: 350px; height: 320px;
+  background: #a3893c; border-radius: 40px; bottom: 0; z-index: 1;
 }
+.about-image-wrapper img { width: 100%; max-width: 330px; position: relative; z-index: 2; border-radius: 0 0 40px 40px; }
+.cro-badge { margin-top: 20px; font-size: 14px; opacity: 0.8; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 10px; }
 
-.about-image-wrapper img {
-  width: 100%;
-  max-width: 360px;
-  position: relative;
-  z-index: 2;
-  border-radius: 0 0 40px 40px; /* Arredonda só a base da foto */
-  display: block;
+/* SUGESTÃO 2: FAQ ACORDEÃO */
+.faq-section { padding: 80px 8%; text-align: center; background: #fafafa; }
+.faq-container { max-width: 800px; margin: 0 auto; text-align: left; }
+.faq-item { background: #fff; margin-bottom: 15px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.faq-question {
+  width: 100%; padding: 20px; background: none; border: none; outline: none;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'Poppins', sans-serif; font-weight: 600; color: var(--deep-blue); cursor: pointer;
 }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: #fff; }
+.faq-answer p { padding: 0 20px 20px; color: #666; font-size: 14px; line-height: 1.6; }
+.faq-item.active .faq-answer { max-height: 200px; }
+.faq-item.active .faq-question i { transform: rotate(180deg); color: var(--gold); }
 
-/* =========================================
-   6. DEPOIMENTOS (FOTOS REDONDAS)
-   ========================================= */
-.testi-header img {
-  width: 65px !important;
-  height: 65px !important;
-  border-radius: 50% !important; /* Força o círculo perfeito */
-  object-fit: cover;
-  border: 2px solid var(--white);
-}
+/* DEPOIMENTOS & FOOTER */
+.testi-header img { width: 60px !important; height: 60px !important; border-radius: 50% !important; object-fit: cover; border: 2px solid #fff; }
+.footer-cta { background: var(--deep-blue); color: var(--white); text-align: center; padding: 60px 8%; }
+.footer-copy { margin-top: 40px; font-size: 12px; opacity: 0.5; }
 
-.testi-card {
-  background: var(--gold);
-  color: var(--white);
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* =========================================
-   7. RESPONSIVO E MOBILE (CONSERTO)
-   ========================================= */
+/* MOBILE */
 @media (max-width: 768px) {
-  /* Ativa o ícone de 3 traços */
   .mobile-menu-icon { display: block; }
-
-  /* Esconde o menu e prepara para o clique */
   .nav {
-    display: none;
-    position: absolute;
-    top: 100%; /* Inicia logo abaixo do topo branco */
-    left: 0;
-    width: 100%;
-    background: var(--white);
-    flex-direction: column;
-    padding: 30px;
-    gap: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    z-index: 1000;
+    display: none; position: absolute; top: 100%; left: 0; width: 100%;
+    background: white; flex-direction: column; padding: 30px; gap: 20px; z-index: 1000;
   }
-
-  /* Mostra o menu quando o Script.js adicionar a classe active */
-  .nav.active {
-    display: flex;
-    animation: fadeIn 0.3s ease;
-  }
-
-  /* Ajustes de Layout no Celular */
-  .hero-content, .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-text h2 { font-size: 32px; }
+  .nav.active { display: flex; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+  .hero-content, .about-container { flex-direction: column; text-align: center; }
   .cards-grid { grid-template-columns: 1fr; }
-
-  /* Ajuste da Imagem Sobre no Mobile */
-  .gold-backdrop {
-    max-width: 300px;
-    height: 280px;
-  }
-  .about-image-wrapper img {
-    max-width: 280px;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
 }
