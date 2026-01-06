@@ -1,42 +1,54 @@
 /* =========================================
    1. MENU MOBILE (ABRIR E FECHAR)
    ========================================= */
-const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
-const navMenu = document.querySelector('.nav');
-const icon = mobileMenuIcon ? mobileMenuIcon.querySelector('i') : null;
+// Usamos getElementById para garantir que o script encontre os botões corrigidos no HTML
+const mobileBtn = document.getElementById('mobile-btn');
+const navMenu = document.getElementById('nav-menu');
 
-if (mobileMenuIcon && navMenu) {
-    mobileMenuIcon.addEventListener('click', () => {
+// Só executa a lógica se os elementos existirem na página para evitar erros no console
+if (mobileBtn && navMenu) {
+    const icon = mobileBtn.querySelector('i');
+
+    mobileBtn.addEventListener('click', () => {
+        // Abre ou fecha a classe 'active' que configuramos no CSS
         navMenu.classList.toggle('active');
         
-        // Troca o ícone de barras para X
+        // Troca o ícone de barras (fa-bars) pelo ícone de fechar (fa-times)
         if (icon) {
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
         }
+    });
+
+    // Fecha o menu automaticamente ao clicar em um link (melhor experiência no celular)
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            if (icon) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
     });
 }
 
-// Fechar menu ao clicar em um link
-document.querySelectorAll('.nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        if (icon) {
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
-        }
-    });
-});
-
 /* =========================================
-   2. HEADER MUDAR AO ROLAR
+   2. HEADER MUDAR AO ROLAR (EFEITO GLASS)
    ========================================= */
 const header = document.querySelector('.header');
 
+// Adiciona uma sombra e fundo mais opaco quando o usuário rolar a página
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+    if (header) {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     }
 });
