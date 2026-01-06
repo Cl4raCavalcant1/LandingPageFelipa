@@ -1,39 +1,42 @@
 /* =========================================
-   MENU MOBILE (CORRIGIDO)
+   1. MENU MOBILE (ABRIR E FECHAR)
    ========================================= */
-const mobileBtn = document.getElementById('mobile-btn');
-const navMenu = document.getElementById('nav-menu');
+const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+const navMenu = document.querySelector('.nav');
+const icon = mobileMenuIcon ? mobileMenuIcon.querySelector('i') : null;
 
-if (mobileBtn && navMenu) {
-    const icon = mobileBtn.querySelector('i');
-
-    mobileBtn.addEventListener('click', () => {
+if (mobileMenuIcon && navMenu) {
+    mobileMenuIcon.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         
-        // Troca Bars por X
-        if (navMenu.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+        // Troca o ícone de barras para X
+        if (icon) {
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
         }
-    });
-
-    // Fecha ao clicar em qualquer link
-    document.querySelectorAll('.nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        });
     });
 }
 
+// Fechar menu ao clicar em um link
+document.querySelectorAll('.nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        if (icon) {
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+        }
+    });
+});
+
 /* =========================================
-   ANIMAÇÕES
+   2. HEADER MUDAR AO ROLAR
    ========================================= */
-const sr = ScrollReveal({ distance: '40px', duration: 1000, delay: 200, reset: false });
-sr.reveal('.hero-text', { origin: 'left' });
-sr.reveal('.hero-img', { delay: 400 });
-sr.reveal('.testi-card', { interval: 200 });
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
