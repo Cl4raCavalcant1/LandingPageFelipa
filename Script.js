@@ -28,7 +28,7 @@ document.querySelectorAll('.faq-question').forEach(button => {
 });
 
 // ANIMAÇÕES
-const sr = ScrollReveal({ distance: '50px', duration: 1000, delay: 200, reset: false });
-sr.reveal('.hero-text', { origin: 'left' });
-sr.reveal('.card-minimal', { interval: 150 });
-sr.reveal('.testi-card', { interval: 200 });
+ScrollReveal().reveal('.hero-text', { origin: 'left', distance: '50px', duration: 1000 });
+ScrollReveal().reveal('.hero-img', { delay: 200 });
+ScrollReveal().reveal('.card-minimal', { interval: 150 });
+ScrollReveal().reveal('.testi-card', { interval: 200 });
