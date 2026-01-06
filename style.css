@@ -22,7 +22,7 @@ body { font-family: 'Poppins', sans-serif; overflow-x: hidden; color: #333; }
 .btn-header { background: var(--gold); color: white !important; padding: 10px 25px; border-radius: 30px; font-weight: 600; text-decoration: none; }
 .mobile-menu-icon { display: none; font-size: 24px; color: var(--gold); cursor: pointer; }
 
-/* HERO */
+/* HERO (RESTAURADO) */
 .hero {
   background: linear-gradient(135deg, #2a3575 0%, var(--deep-blue) 100%);
   padding: 60px 8% 0 8%; min-height: 85vh; display: flex; align-items: center; color: white;
@@ -33,26 +33,30 @@ body { font-family: 'Poppins', sans-serif; overflow-x: hidden; color: #333; }
 .hero-img { width: 100%; max-width: 450px; position: relative; z-index: 2; }
 .scroll-down { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; font-size: 24px; animation: bounce 2s infinite; }
 
-/* MARQUEE (QUADRADO AZUL RODANDO) */
+/* FAIXA AZUL RODANDO (MARQUEE) */
 .marquee-strip { background: var(--deep-blue); padding: 20px 0; overflow: hidden; white-space: nowrap; border-top: 4px solid #fff; }
 .marquee-content { display: inline-block; animation: scrollText 30s linear infinite; }
 .marquee-content span { color: white; font-size: 14px; text-transform: uppercase; margin-right: 60px; }
 @keyframes scrollText { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* CARDS */
+/* ESPECIALIDADES (6 CARDS) */
 .specialties { padding: 100px 8%; text-align: center; }
 .pill-title { display: inline-block; background: var(--gold); color: white; padding: 10px 35px; border-radius: 50px; font-size: 20px; margin-bottom: 60px; }
 .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto; }
 .card-minimal { padding: 40px 20px; border-radius: 15px; border: 1px solid #f0f0f0; transition: 0.3s; text-align: center; }
+.card-minimal:hover { transform: translateY(-10px); border-color: var(--gold); }
 .card-minimal i { font-size: 40px; color: var(--gold); margin-bottom: 20px; }
 .btn-gold { background: var(--gold); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 40px; }
 
-/* SOBRE (DESIGN MOLDURA) */
+/* QUEM É DRA FELIPA (MOLDURA ARREDONDADA REF) */
 .about-section { background: var(--deep-blue); color: white; padding: 100px 8%; }
 .about-container { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; }
 .about-image-wrapper { position: relative; flex: 1; display: flex; justify-content: center; align-items: flex-end; }
-.gold-backdrop { position: absolute; width: 100%; max-width: 380px; height: 350px; background: #a3893c; border-radius: 30px; bottom: 0; z-index: 1; }
-.about-image-wrapper img { width: 100%; max-width: 380px; position: relative; z-index: 2; border-radius: 0 0 30px 30px; }
+.gold-backdrop {
+  position: absolute; width: 100%; max-width: 380px; height: 350px;
+  background: #a3893c; border-radius: 40px; bottom: 0; z-index: 1;
+}
+.about-image-wrapper img { width: 100%; max-width: 380px; position: relative; z-index: 2; border-radius: 0 0 40px 40px; }
 
 /* FAQ */
 .faq-section { padding: 80px 8%; text-align: center; background: #fafafa; }
@@ -61,18 +65,23 @@ body { font-family: 'Poppins', sans-serif; overflow-x: hidden; color: #333; }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
 .faq-item.active .faq-answer { max-height: 150px; padding-bottom: 20px; }
 
-/* DEPOIMENTOS */
-.testi-header img { width: 65px !important; height: 65px !important; border-radius: 50% !important; object-fit: cover; border: 2px solid #fff; }
+/* DEPOIMENTOS (FOTOS REDONDAS) */
 .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 40px 0; }
 .testi-card { background: var(--gold); color: white; padding: 40px; border-radius: 20px; text-align: left; }
+.testi-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+.testi-header img { width: 65px !important; height: 65px !important; border-radius: 50% !important; object-fit: cover; border: 3px solid #fff; }
 
 /* FOOTER */
 .footer-cta { background: var(--deep-blue); color: white; text-align: center; padding: 100px 8%; border-top: 10px solid white; }
+.btn-gold-footer { background: var(--gold); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 40px; }
 
 /* MOBILE */
 @media (max-width: 900px) {
   .hero-content, .about-container, .cards-grid, .testimonials-grid { flex-direction: column; grid-template-columns: 1fr; }
   .mobile-menu-icon { display: block; }
-  .nav { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: white; flex-direction: column; padding: 20px; }
-  .nav.active { display: flex; }
+  .nav {
+    display: none; position: absolute; top: 100%; left: 0; width: 100%;
+    background: white; flex-direction: column; padding: 30px; gap: 20px; z-index: 1000;
+  }
+  .nav.active { display: flex; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 }

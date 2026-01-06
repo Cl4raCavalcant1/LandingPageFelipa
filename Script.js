@@ -1,10 +1,22 @@
-// MENU MOBILE
 const mobileBtn = document.getElementById('mobile-btn');
 const navMenu = document.getElementById('nav-menu');
 
 if (mobileBtn && navMenu) {
+    const icon = mobileBtn.querySelector('i');
     mobileBtn.addEventListener('click', () => {
         navMenu.classList.toggle('active');
+        if (navMenu.classList.contains('active')) {
+            icon.classList.replace('fa-bars', 'fa-times');
+        } else {
+            icon.classList.replace('fa-times', 'fa-bars');
+        }
+    });
+
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            icon.classList.replace('fa-times', 'fa-bars');
+        });
     });
 }
 
