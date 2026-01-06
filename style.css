@@ -40,6 +40,14 @@ body {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+/* Classe adicionada via JS ao rolar */
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95); /* Fundo branco translúcido */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Sombra mais forte */
+  padding: 10px 8%; /* Altura reduzida */
 }
 
 .logo-container {
@@ -102,7 +110,7 @@ body {
    ========================================= */
 .hero {
   background: linear-gradient(135deg, #2a3575 0%, var(--deep-blue) 100%);
-  padding: 40px 8% 0 8%; /* Padding inferior 0 para a foto encostar embaixo se quiser */
+  padding: 40px 8% 0 8%;
   min-height: 85vh;
   display: flex;
   align-items: center;
@@ -164,8 +172,6 @@ body {
   max-width: 450px;
   position: relative;
   z-index: 1;
-  /* Se a foto não for PNG recortada, adicione border-radius: */
-  /* border-radius: 20px; */ 
 }
 
 /* Seta para baixo */
@@ -188,15 +194,14 @@ body {
 }
 
 /* =========================================
-   ESPECIALIDADES
+   ESPECIALIDADES (ATUALIZADO PARA 3 COLUNAS)
    ========================================= */
 .specialties {
-  padding: 100px 8% 60px; /* Mais padding no topo por causa da seta */
+  padding: 100px 8% 60px;
   text-align: center;
   background: var(--white);
 }
 
-/* O título em formato de pílula dourada */
 .pill-title {
   display: inline-block;
   background: var(--gold);
@@ -211,24 +216,32 @@ body {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
+  /* MUDANÇA AQUI: Força 3 colunas exatas */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 30px;
   margin-bottom: 50px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card-minimal {
-  padding: 20px;
+  padding: 30px 20px;
   text-align: center;
   transition: transform 0.3s;
+  border: 1px solid transparent;
+  border-radius: 10px;
 }
 
 .card-minimal:hover {
   transform: translateY(-10px);
+  border-color: #f0f0f0;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.03);
 }
 
 .card-minimal i {
   font-size: 40px;
-  color: var(--gold); /* Ícones dourados */
+  color: var(--gold);
   margin-bottom: 20px;
   display: block;
 }
@@ -274,7 +287,7 @@ body {
   padding: 18px 0;
   overflow: hidden;
   white-space: nowrap;
-  border-top: 4px solid #fff; /* Pequena separação se quiser */
+  border-top: 4px solid #fff;
 }
 
 .marquee-content {
@@ -291,7 +304,6 @@ body {
   position: relative;
 }
 
-/* Bolinha entre os textos */
 .marquee-content span::after {
   content: '•';
   position: absolute;
@@ -351,16 +363,15 @@ body {
   min-width: 300px;
 }
 
-/* O quadrado dourado atrás da foto */
 .gold-backdrop {
   position: absolute;
   width: 100%;
   max-width: 380px;
   height: 90%;
-  background: #a3893c; /* Dourado mais fechado */
+  background: #a3893c;
   border-radius: 30px;
   bottom: 0;
-  right: 10px; /* Deslocado para direita */
+  right: 10px;
   z-index: 0;
 }
 
@@ -369,9 +380,8 @@ body {
   max-width: 380px;
   position: relative;
   z-index: 1;
-  border-radius: 0 0 30px 30px; /* Arredonda só embaixo ou conforme a foto */
-  /* Se for foto inteira retangular: border-radius: 30px; */
-  transform: translateY(-30px); /* Sobe um pouco pra sair da caixa */
+  border-radius: 0 0 30px 30px;
+  transform: translateY(-30px);
 }
 
 /* =========================================
@@ -390,7 +400,7 @@ body {
 }
 
 .testi-card {
-  background: var(--gold); /* Fundo Dourado */
+  background: var(--gold);
   color: var(--white);
   padding: 40px 30px;
   border-radius: 20px;
@@ -432,7 +442,7 @@ body {
   color: var(--white);
   text-align: center;
   padding: 100px 8%;
-  border-top: 10px solid var(--white); /* Separador visual */
+  border-top: 10px solid var(--white);
 }
 
 .footer-cta h2 {
@@ -443,15 +453,15 @@ body {
 }
 
 .margin-top {
-  margin-top: 0; /* Ajuste se necessário */
+  margin-top: 0;
 }
 
 /* =========================================
-   RESPONSIVO (CELULAR)
+   RESPONSIVO E MOBILE (ORGANIZADO)
    ========================================= */
 @media (max-width: 900px) {
+  /* Layout Hero e Sobre */
   .hero {
-    flex-direction: column-reverse; /* Foto em cima, texto embaixo no mobile? ou normal */
     flex-direction: column;
     text-align: center;
     padding-top: 100px;
@@ -466,45 +476,15 @@ body {
   
   .glow-effect { width: 300px; height: 300px; }
 
-  .nav {
-    display: none; /* Menu some no mobile (precisa do JS pra abrir) */
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: var(--white);
-    flex-direction: column;
-    padding: 20px;
-    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-  }
-  
-  .nav.active { display: flex; }
-  
-  .mobile-menu-icon { display: block; }
-  
   .about-container { flex-direction: column; }
   .gold-backdrop { right: 0; margin: 0 auto; left: 0; width: 90%; }
-}
-/* Efeito do Header ao Rolar */
-.header.scrolled {
-  background: rgba(255, 255, 255, 0.95); /* Branco translúcido */
-  padding: 10px 8%; /* Fica mais compacto */
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Sombra suave */
-}
-/* CLASSE QUE O JS VAI ADICIONAR AO ROLAR */
-.header.scrolled {
-  background: rgba(255, 255, 255, 0.95); /* Fundo branco quase sólido */
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Sombra elegante */
-  padding: 10px 8%; /* Fica mais fininho */
-}
 
-/* AJUSTES FINAIS DO MENU MOBILE */
-@media (max-width: 900px) {
+  /* Menu Mobile */
   .nav {
-    display: none;
+    display: none; /* Esconde menu padrão */
     flex-direction: column;
     position: absolute;
-    top: 70px; /* Altura do header */
+    top: 70px;
     left: 0;
     width: 100%;
     background: var(--white);
@@ -513,11 +493,24 @@ body {
     text-align: center;
     gap: 25px;
   }
-
-  /* Quando o JS adicionar a classe .active, o menu aparece */
-  .nav.active {
+  
+  .nav.active { 
     display: flex; 
     animation: fadeIn 0.3s ease;
+  }
+  
+  .mobile-menu-icon { display: block; }
+
+  /* Ajuste Grid Especialidades para Tablet */
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  }
+}
+
+/* Ajuste Grid Especialidades para Celular */
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr; /* 1 coluna */
   }
 }
 
