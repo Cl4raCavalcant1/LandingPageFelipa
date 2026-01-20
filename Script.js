@@ -1,13 +1,12 @@
-// MENU MOBILE (Abrir e Fechar)
+// MENU MOBILE
 const mobileBtn = document.getElementById('mobile-toggle');
 const navMenu = document.getElementById('nav-menu');
-const icon = mobileBtn.querySelector('i');
+const icon = mobileBtn ? mobileBtn.querySelector('i') : null;
 
 if (mobileBtn) {
     mobileBtn.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         
-        // Troca icone
         if (navMenu.classList.contains('active')) {
             icon.classList.remove('fa-bars');
             icon.classList.add('fa-times');
@@ -18,33 +17,30 @@ if (mobileBtn) {
     });
 }
 
-// Fechar menu ao clicar no link
-document.querySelectorAll('.nav-link, .nav-btn-mobile').forEach(link => {
+// FECHAR MENU AO CLICAR EM LINK
+document.querySelectorAll('.nav-link, .nav-btn').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+        if(icon) {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
     });
 });
 
-// FAQ (ACORDEÃO COM ANIMAÇÃO)
+// FAQ ACORDEÃO
 const faqQuestions = document.querySelectorAll('.faq-question');
-
-faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-        const item = question.parentElement;
-        
-        // Se quiser que feche os outros ao abrir um, descomente a linha abaixo:
-        // document.querySelectorAll('.faq-item').forEach(i => i !== item && i.classList.remove('active'));
-        
+faqQuestions.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.parentElement;
         item.classList.toggle('active');
     });
 });
 
-// ANIMAÇÕES AO ROLAR (ScrollReveal)
+// ANIMAÇÕES
 ScrollReveal().reveal('.hero-text', { origin: 'left', distance: '50px', duration: 1000 });
 ScrollReveal().reveal('.hero-img', { origin: 'bottom', distance: '50px', duration: 1000, delay: 200 });
-ScrollReveal().reveal('.card-service', { interval: 100, origin: 'bottom', distance: '30px' });
-ScrollReveal().reveal('.about-info', { origin: 'left', distance: '50px', duration: 1000 });
-ScrollReveal().reveal('.about-photo-wrapper', { origin: 'right', distance: '50px', duration: 1000 });
-ScrollReveal().reveal('.testi-card', { interval: 150, origin: 'bottom' });
+ScrollReveal().reveal('.card-minimal', { interval: 100, origin: 'bottom', distance: '30px' });
+ScrollReveal().reveal('.about-text', { origin: 'left', distance: '50px', duration: 1000 });
+ScrollReveal().reveal('.about-image-box', { origin: 'right', distance: '50px', duration: 1000 });
+ScrollReveal().reveal('.testi-card', { interval: 100, origin: 'bottom' });
