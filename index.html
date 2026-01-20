@@ -1,123 +1,225 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dra. Felipa Fernandes | Odontologia Premium</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juliana Campos | Nutricionista</title>
+
+  <!-- CSS Linkado -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fontes e Ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Ícones (FontAwesome para estrelas e redes sociais) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header class="header">
-  <div class="logo-container">
-    <h1 class="logo-script">Felipa Fernandes</h1>
-    <span class="logo-sub">ODONTOLOGIA</span>
-  </div>
-  <nav class="nav" id="nav-menu">
-    <a href="#">Home</a>
-    <a href="#about">Sobre Nós</a>
-    <a href="#testimonials">Depoimentos</a>
-    <a href="https://wa.me/5500000000000" class="btn-header">Agendar Consulta</a>
+  <!-- NAVBAR (NOVO) -->
+  <nav class="navbar animate delay-1">
+    <div class="logo">Juliana Campos<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#home">Início</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#contato" class="btn-nav">Agendar</a></li>
+    </ul>
   </nav>
-  <div class="mobile-menu-icon" id="mobile-btn">
-    <i class="fas fa-bars"></i>
-  </div>
-</header>
 
-<section class="hero">
-  <div class="hero-content">
+  <!-- HERO -->
+  <header id="home" class="hero">
     <div class="hero-text">
-      <h2>Mais do que cuidar de dentes,<br><span class="gold-text">cuidamos de pessoas.</span></h2>
-      <p>Odontologia estética e funcional com mais de 5 anos de experiência. Atendimento acolhedor, tecnologias atuais e foco total na sua autoestima.</p>
+      <h1 class="animate delay-1">
+        Seu Atendimento <br> <span>Nutricional Online</span>
+      </h1>
+      <p class="animate delay-2">
+        Nutrição personalizada, sem terrorismo alimentar. Redescubra o prazer de comer bem e alcance seus objetivos com leveza.
+      </p>
+      <div class="hero-buttons animate delay-3">
+        <a href="#contato" class="btn primary">Agendar consulta</a>
+        <a href="#sobre" class="btn secondary">Saiba mais</a>
+      </div>
     </div>
-    <div class="hero-image-container">
-      <div class="glow-effect"></div>
-      <img src="DRA.png" alt="Dra Felipa" class="hero-img" />
-    </div>
-  </div>
-  <div class="scroll-down"><i class="fas fa-arrow-down"></i></div>
-</section>
 
-<section class="specialties">
-  <div class="pill-title">Nossas Especialidades</div>
-  <div class="cards-grid">
-    <div class="card-minimal"><i class="fas fa-magic"></i><h3>Harmonização Facial</h3><p>Realce sua beleza natural.</p></div>
-    <div class="card-minimal"><i class="fas fa-tooth"></i><h3>Implante Dentário</h3><p>Recupere seu sorriso.</p></div>
-    <div class="card-minimal"><i class="far fa-smile-beam"></i><h3>Odontologia Estética</h3><p>Lentes e clareamento.</p></div>
-    <div class="card-minimal"><i class="fas fa-child"></i><h3>Odontopediatria</h3><p>Cuidado para os pequenos.</p></div>
-    <div class="card-minimal"><i class="fas fa-clinic-medical"></i><h3>Clínica Geral</h3><p>Prevenção completa.</p></div>
-    <div class="card-minimal"><i class="fas fa-user-md"></i><h3>Estética Orofacial</h3><p>Equilíbrio e face.</p></div>
-  </div>
-  <div class="center-btn"><a href="#" class="btn-gold">Agendar Consulta</a></div>
-</section>
+    <div class="hero-img animate delay-2">
+      <!-- Imagem de exemplo (substitua pelo seu arquivo local) -->
+      <div class="img-wrapper">
+        <img src="Imagens/Nutri1sf.png" alt="Nutricionista Sorrindo">
+      </div>
+    </div>
+  </header>
 
-<div class="marquee-strip">
-  <div class="marquee-content">
-    <span>Harmonização Facial • Odontopediatria • Implante Dentário • Odontologia • Harmonização Facial • Odontopediatria • Implante Dentário • Odontologia •</span>
-    <span>Harmonização Facial • Odontopediatria • Implante Dentário • Odontologia • Harmonização Facial • Odontopediatria • Implante Dentário • Odontologia •</span>
-  </div>
-</div>
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="services">
+    <div class="container">
+      <h2 class="section-title animate delay-1">Como posso te ajudar?</h2>
+      
+      <div class="services-content">
+        <div class="services-list animate delay-2">
+          <div class="service-item">
+            <i class="fa-solid fa-apple-whole"></i>
+            <div>
+              <h3>Reeducação Alimentar</h3>
+              <p>Aprenda a fazer escolhas saudáveis sem restrições severas.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <i class="fa-solid fa-dumbbell"></i>
+            <div>
+              <h3>Nutrição Esportiva</h3>
+              <p>Performance e recuperação muscular para seus treinos.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <i class="fa-solid fa-weight-scale"></i>
+            <div>
+              <h3>Emagrecimento</h3>
+              <p>Perda de peso sustentável e focada na sua saúde metabólica.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <i class="fa-solid fa-venus"></i>
+            <div>
+              <h3>Saúde da Mulher</h3>
+              <p>Nutrição para SOP, Endometriose, TPM e Menopausa.</p>
+            </div>
+          </div>
+        </div>
 
-<section id="about" class="about-section">
-  <div class="about-container">
-    <div class="about-text">
-      <h2>Quem é <span class="gold-text">Dra. Felipa Fernandes?</span></h2>
-      <p>A Dra. Felipa Fernandes é cirurgiã-dentista apaixonada por transformar sorrisos e elevar a autoestima de seus pacientes.</p>
-      <p>Com mais de 5 anos de experiência na odontologia, atua com foco em tratamentos modernos, humanizados e personalizados, sempre priorizando conforto, segurança e resultados naturais.</p>
-      <p>Seu atendimento é pautado na confiança, no cuidado individual e na busca constante por atualização profissional.</p>
-      <p class="cro-text">CRO-PB 00.000</p>
+        <div class="services-img animate delay-3">
+          <img src="Imagens/Nutri3.png" alt="Prato Saudável">
+        </div>
+      </div>
     </div>
-    <div class="about-image-wrapper">
-      <div class="gold-backdrop"></div>
-      <img src="f2.png" alt="Dra Felipa">
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="faq-section">
-  <div class="pill-title">Dúvidas Frequentes</div>
-  <div class="faq-container">
-    <div class="faq-item">
-      <button class="faq-question">Os tratamentos são dolorosos? <i class="fas fa-chevron-down"></i></button>
-      <div class="faq-answer"><p>Priorizamos o conforto total com técnicas de anestesia modernas, garantindo procedimentos tranquilos.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Como funciona a primeira consulta? <i class="fas fa-chevron-down"></i></button>
-      <div class="faq-answer"><p>Realizamos uma avaliação detalhada da sua saúde bucal e estética facial para montar um plano personalizado.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Aceitam convênios? <i class="fas fa-chevron-down"></i></button>
-      <div class="faq-answer"><p>Trabalhamos com sistema de reembolso e atendimento particular para garantir a máxima qualidade nos materiais e tempo de consulta.</p></div>
-    </div>
-  </div>
-</section>
+  <!-- SOBRE -->
+  <section id="sobre" class="about">
+    <div class="about-container">
+      <div class="about-img animate delay-1">
+        <img src="Imagens/Nutri2sf.png" alt="Juliana Campos">
+      </div>
 
-<section id="testimonials" class="testimonials-section">
-  <div class="pill-title">Depoimentos</div>
-  <div class="testimonials-grid">
-    <div class="testi-card">
-      <div class="testi-header"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto"><h4>Maria S.</h4></div>
-      <p>"Atendimento impecável! Me senti segura desde a primeira consulta."</p>
-    </div>
-    <div class="testi-card">
-      <div class="testi-header"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Foto"><h4>Ana P.</h4></div>
-      <p>"Resultado incrível, superou minhas expectativas."</p>
-    </div>
-    <div class="testi-card">
-      <div class="testi-header"><img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Foto"><h4>Carla M.</h4></div>
-      <p>"A melhor profissional que já conheci. Recomendo."</p>
-    </div>
-  </div>
-</section>
+      <div class="about-text">
+        <span class="tag animate delay-1">Sobre mim</span>
+        <h2 class="animate delay-1">Olá, sou a Juliana Campos</h2>
+        
+        <p class="animate delay-2">
+          Sou nutricionista apaixonada por transformar vidas através da comida de verdade. Minha missão é te mostrar que ser saudável não significa comer comida sem graça.
+        </p>
 
-<footer class="footer-cta">
-  <h2>Seu sorriso merece cuidado especializado.</h2>
-  <a href="#" class="btn-gold">Agendar Consulta</a>
-</footer>
+        <p class="animate delay-3">
+          Com pós-graduação em Nutrição Clínica, meu método une <strong>evidência científica</strong> com <strong>acolhimento humano</strong>. Respeito sua rotina, suas preferências e sua história.
+        </p>
 
-<script src="https://unpkg.com/scrollreveal"></script>
-<script src="Script.js"></script>
+        <a href="#contato" class="btn primary animate delay-3">Conhecer meu método</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos" class="testimonials">
+    <h2 class="section-title white animate delay-1">Histórias de Sucesso</h2>
+    <p class="subtitle animate delay-2">
+      O que meus pacientes dizem sobre o acompanhamento
+    </p>
+
+    <div class="cards-container">
+      <!-- Card 1 -->
+      <div class="card animate delay-1">
+        <div class="card-header">
+          <div class="avatar">M</div>
+          <div>
+            <h4>Mariana Gomes</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <p>“Nada de dietas malucas. Pela primeira vez consegui manter o plano alimentar por mais de 3 meses. Me sinto muito mais disposta!”</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card animate delay-2">
+        <div class="card-header">
+          <div class="avatar">J</div>
+          <div>
+            <h4>Jonas Arturo</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <p>“Profissional excelente. O plano foi totalmente ajustado à minha rotina corrida e aos meus treinos de CrossFit. Evolução visível.”</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card animate delay-3">
+        <div class="card-header">
+          <div class="avatar">P</div>
+          <div>
+            <h4>Patrícia Mariano</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <p>“Atendimento acolhedor. A Ju me ensinou a lidar com a ansiedade sem descontar na comida. Gratidão eterna!”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO & CONTATO -->
+  <section id="contato" class="location">
+    <div class="location-content animate delay-1">
+      <h2>Vamos começar sua transformação?</h2>
+      <p>
+        Atendimento presencial e online para todo o mundo.
+      </p>
+      
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <p>Rua NutriVida, 880 – Ed. Vitality, Sala 305<br>Jardim Bem-Estar</p>
+        </div>
+        <div class="info-item">
+          <i class="fa-brands fa-whatsapp"></i>
+          <p>(11) 99999-9999</p>
+        </div>
+      </div>
+
+      <a href="#" class="btn primary big">Agendar via WhatsApp</a>
+    </div>
+
+    <div class="map-frame animate delay-3">
+      <!-- Placeholder de mapa (imagem estática para carregar rápido, pode ser iframe) -->
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.652!3d-23.561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzM5LjYiUyA0NsKwMzknMDcuMiJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <p>Site Desenvolvido e Criado por @Claradevweb</p>
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="#" class="whatsapp-float" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
 </body>
 </html>
